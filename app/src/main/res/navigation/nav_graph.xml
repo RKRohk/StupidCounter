@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
+            app:startDestination="@id/mainActivityFragment">
+
+    <fragment android:id="@+id/countFragment" android:name="com.example.mystupidapp.ui.count.CountFragment"
+              android:label="count_fragment" tools:layout="@layout/count_fragment">
+        <argument android:name="name" app:argType="string" android:defaultValue="Meh"/>
+    </fragment>
+    <fragment android:id="@+id/mainActivityFragment" android:name="com.example.mystupidapp.mainActivityFragment"
+              android:label="main_activity_fragment" tools:layout="@layout/main_activity_fragment">
+        <action android:id="@+id/action_mainActivityFragment_to_countFragment" app:destination="@id/countFragment"
+                app:popUpTo="@+id/mainActivityFragment">
+            <argument android:defaultValue="Loreum"
+                    android:name="name" />
+        </action>
+    </fragment>
+</navigation>
